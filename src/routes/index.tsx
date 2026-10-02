@@ -25,7 +25,11 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const [first, second, ...rest] = projects;
+  const [first, second, ...rest] = projects as [
+    (typeof projects)[number],
+    (typeof projects)[number],
+    ...(typeof projects)[number][],
+  ];
 
   return (
     <>
